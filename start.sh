@@ -1,0 +1,1 @@
+docker run -e PARAMS=" --ChatAI-api.groupId=知识星球ID --ChatAI-api.chatGPTApiKey=自行申请 --ChatAI-api.cookie=登录cookie信息" -p 8090:8090 --name ChatAI-api -d ChatAI-api:1.0
