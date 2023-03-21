@@ -4,3 +4,4 @@ server:
 ChatAI-api:
   groupId: 28885884418411  # 知识星球ID
   cookie:  # 知识星球个人cookie信息
+  chatGPTApiKey:  # chatgpt api的key，用于调用api

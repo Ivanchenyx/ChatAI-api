@@ -1,10 +1,11 @@
 package com.yanhee.chatai.api.test;
 
 import com.alibaba.fastjson.JSON;
+import com.yanhee.chatai.api.domain.chatgpt.IOpenAIApi;
 import com.yanhee.chatai.api.domain.zsxq.IZsxqApi;
 import com.yanhee.chatai.api.domain.zsxq.model.aggregate.UnAnsweredQuestionsAggregates;
 import com.yanhee.chatai.api.domain.zsxq.model.vo.Topics;
-import org.bouncycastle.asn1.cryptopro.GostR3410KeyTransport;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,9 +37,16 @@ public class ApiTest {
     @Value("${ChatAI-api.cookie}")
     private String cookie;
 
+    @Value("${ChatAI-api.chatGPTApiKey}")
+    private String chatGPTApiKey;
+
     @Resource
     private IZsxqApi zsxqApi;
 
+    @Resource
+    private IOpenAIApi openAI;
+
+    @Test
     public void testZsxqApi() throws IOException {
         UnAnsweredQuestionsAggregates unAnsweredQuestionsAggregates = zsxqApi.queryUnAnsweredQuestionsTopicId(groupId, cookie);
         String jsonString = JSON.toJSONString(unAnsweredQuestionsAggregates);
@@ -53,4 +61,11 @@ public class ApiTest {
             zsxqApi.answer(groupId, cookie, topicId, text, false);
         }
     }
+
+    @Test
+    public void testOpenAIApi() throws IOException {
+        String answer = openAI.doChatGPT(chatGPTApiKey, "你是谁");
+        log.info("chatgpt回答问题测试结果：{}", answer);
+    }
+
 }
