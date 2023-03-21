@@ -1,0 +1,6 @@
+server:
+  port: 8090
+
+ChatAI-api:
+  groupId: 28885884418411  # 知识星球ID
+  cookie:  # 知识星球个人cookie信息

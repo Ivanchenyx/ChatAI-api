@@ -51,17 +51,20 @@
                 <artifactId>selenium-java</artifactId>
                 <version>3.141.59</version>
             </dependency>
+            <!-- Web自动化测试工具 -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
                 <version>3.141.59</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+            <!-- 支持HTTP协议的客户端编程工具包 -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>4.5.14</version>
             </dependency>
+            <!-- 上传文件用 -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpmime</artifactId>
